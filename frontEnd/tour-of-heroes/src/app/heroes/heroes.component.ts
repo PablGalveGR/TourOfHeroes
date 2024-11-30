@@ -4,11 +4,12 @@ import { Hero } from './Hero';
 import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
 import { HeroService } from '../services/hero/hero.service';
 import { MessageService } from '../services/message/message.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-heroes',
   standalone: true,
-  imports: [HeroDetailComponent, NgFor],
+  imports: [HeroDetailComponent, NgFor, RouterLink],
   templateUrl: './heroes.component.html',
   styleUrl: './heroes.component.css'
 })
@@ -21,9 +22,5 @@ export class HeroesComponent {
   }
   getHeroes():void{
     this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
-  }
-  onSelect(hero : Hero){
-    this.selectedHero = hero;
-    this.messageService.add('Heroes Component: Hero selected Id:' + hero.id + ' Name: '+hero.name);
   }
 }

@@ -9,9 +9,15 @@ import { MessageService } from '../message/message.service';
 export class HeroService {
 
   constructor(private messageService : MessageService) { }
+  
   getHeroes() : Observable<Hero[]>{
     const heroes = of(HEROESARRAY);
     this.messageService.add('Heroes Service: Heroes fetched');
     return heroes;
+  }
+  getHero(id : number) : Observable<Hero>{
+    const hero = HEROESARRAY.find(h => h.id === id)!;
+    this.messageService.add('Heroes Service: Hero fetched ID: '+ hero.id + ' Name: ' + hero.name);
+    return of(hero);
   }
 }

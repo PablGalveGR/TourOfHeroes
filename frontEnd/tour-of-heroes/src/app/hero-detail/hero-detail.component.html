@@ -3,5 +3,5 @@
     <div><span>id: </span>{{hero.id}}</div>
     <label for="hero-name"> Name:</label>
     <input type="text" name = "hero-name" placeholder={{hero.name}} [(ngModel)] = hero.name>
-    <button class="closeHero" (click) = "onClose()">Close</button>
+    <button class="closeHero" (click) = "goBack()">Close</button>
 </div>
