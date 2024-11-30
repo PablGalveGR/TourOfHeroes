@@ -1,4 +1,4 @@
-import { Hero } from "./hero";
+import { Hero } from "./Hero";
 export const HEROESARRAY : Hero[] = [
     {id: 1, name: "Pepe Arrays"},
     {id: 2, name: "Pepe Vector"},

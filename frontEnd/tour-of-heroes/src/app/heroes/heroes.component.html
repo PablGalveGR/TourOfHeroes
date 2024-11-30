@@ -1,20 +1,11 @@
-<p>heroes works!</p>
-<!-- <div class="hero">
-    <p>ID: {{hero.id}}</p>
-    <label for="heroName"> Name:</label>
-    <input type="text" name = "heroName" placeholder={{hero.name}} [(ngModel)] = hero.name>
-</div>-->
-<div class ="heroesList">
-    <ul class="heroes">
-        <li *ngFor= "let hero of heroes">
-            <button type="button" (click) = "onSelect(hero)">
-                <span class="badge">{{hero.id}}</span>
-                <span class="name">{{hero.name}}</span>
-            </button>
-        </li>
-    </ul>
-</div>
-<div class="heroDetails" *ngIf="selectedHero">
-    <h2>{{selectedHero.name | uppercase}} Details</h2>
-    <button class="closeHero" (click) = "onClose()">Close</button>
+<div class="heroesList">
+  <ul class="heroes">
+    <li *ngFor="let hero of heroes">
+      <button type="button" (click)="onSelect(hero)">
+        <span class="badge">{{hero.id}}</span>
+        <span class="name">{{hero.name}}</span>
+      </button>
+    </li>
+  </ul>
+  <app-hero-detail [hero]="selectedHero"></app-hero-detail>
 </div>
