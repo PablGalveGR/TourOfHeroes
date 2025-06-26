@@ -8,7 +8,7 @@ import { MessageService } from '../message/message.service';
 })
 export class HeroService {
 
-  constructor(private messageService : MessageService) { }
+  constructor(private messageService : MessageService) {console.log("Service inicialiced") }
   
   getHeroes() : Observable<Hero[]>{
     const heroes = of(HEROESARRAY);

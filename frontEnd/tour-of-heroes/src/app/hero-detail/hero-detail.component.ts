@@ -1,10 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgIf, UpperCasePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Hero } from '../heroes/Hero';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-
 import { HeroService } from '../services/hero/hero.service';
 
 @Component({
@@ -17,10 +16,12 @@ import { HeroService } from '../services/hero/hero.service';
 export class HeroDetailComponent {
   constructor(private route: ActivatedRoute,
     private heroService: HeroService,
-    private location: Location) { }
+    private location: Location) { 
+      
+    }
   hero?: Hero;
   ngOnInit(){
-    this.getHero()
+    this.getHero();
   }
   getHero(){
     const id = Number(this.route.snapshot.paramMap.get('id'));
